@@ -1,0 +1,29 @@
+<%= form_for(@fund_manager) do |f| %>
+  <% if @fund_manager.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fund_manager.errors.count, "error") %> prohibited this fund_manager from being saved:</h2>
+
+      <ul>
+      <% @fund_manager.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :about %><br>
+    <%= f.text_area :about %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

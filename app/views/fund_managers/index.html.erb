@@ -1,0 +1,29 @@
+<h1>Listing fund_managers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>About</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fund_managers.each do |fund_manager| %>
+      <tr>
+        <td><%= fund_manager.first_name %></td>
+        <td><%= fund_manager.last_name %></td>
+        <td><%= fund_manager.about %></td>
+        <td><%= link_to 'Show', fund_manager %></td>
+        <td><%= link_to 'Edit', edit_fund_manager_path(fund_manager) %></td>
+        <td><%= link_to 'Destroy', fund_manager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fund manager', new_fund_manager_path %>
