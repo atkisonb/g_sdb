@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transaction_dollar_amount: 1
+  issued_nav_shares: 1
+  user_account_id: 
+  fund_id: 
+
+two:
+  transaction_dollar_amount: 1
+  issued_nav_shares: 1
+  user_account_id: 
+  fund_id: 
