@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @market_order.stock %>
+</p>
+
+<p>
+  <strong>Bid:</strong>
+  <%= @market_order.bid %>
+</p>
+
+<p>
+  <strong>Ask:</strong>
+  <%= @market_order.ask %>
+</p>
+
+<p>
+  <strong>Exchange order number:</strong>
+  <%= @market_order.exchange_order_number %>
+</p>
+
+<%= link_to 'Edit', edit_market_order_path(@market_order) %> |
+<%= link_to 'Back', market_orders_path %>
