@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fund_name: MyString
+  fund_description: MyText
+  fund_strategy: MyText
+
+two:
+  fund_name: MyString
+  fund_description: MyText
+  fund_strategy: MyText
