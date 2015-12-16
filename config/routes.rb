@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :funds
+
   resources :fund_managements
 
   resources :fund_managers
