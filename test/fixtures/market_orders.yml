@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_id: 
+  bid: 1
+  ask: 1
+  exchange_order_number: 1
+
+two:
+  stock_id: 
+  bid: 1
+  ask: 1
+  exchange_order_number: 1
