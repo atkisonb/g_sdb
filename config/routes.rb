@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :fund_transactions
+
   resources :stocks
 
   resources :market_orders
