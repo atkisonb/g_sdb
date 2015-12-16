@@ -1,31 +1,40 @@
-<h1>Listing market_orders</h1>
-
-<table>
+<%- model_class = MarketOrder -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => MarketOrder %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Stock</th>
-      <th>Bid</th>
-      <th>Ask</th>
-      <th>Exchange order number</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:bid) %></th>
+      <th><%= model_class.human_attribute_name(:ask) %></th>
+      <th><%= model_class.human_attribute_name(:exchange_order_number) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @market_orders.each do |market_order| %>
       <tr>
-        <td><%= market_order.stock %></td>
+        <td><%= market_order.id %></td>
         <td><%= market_order.bid %></td>
         <td><%= market_order.ask %></td>
         <td><%= market_order.exchange_order_number %></td>
-        <td><%= link_to 'Show', market_order %></td>
-        <td><%= link_to 'Edit', edit_market_order_path(market_order) %></td>
-        <td><%= link_to 'Destroy', market_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l market_order.created_at, format: :long %></td>
+        <td>
+          <%= link_to market_order_path(market_order), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to market_order_path(market_order), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Market order', new_market_order_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_market_order_path,
+            :class => 'btn btn-primary' %>

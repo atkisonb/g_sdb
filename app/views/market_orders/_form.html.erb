@@ -1,33 +1,28 @@
-<%= form_for(@market_order) do |f| %>
-  <% if @market_order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@market_order.errors.count, "error") %> prohibited this market_order from being saved:</h2>
-
-      <ul>
-      <% @market_order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @market_order, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :bid, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :bid, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ask, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :ask, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :exchange_order_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :exchange_order_number, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :stock_id %><br>
-    <%= f.text_field :stock_id %>
-  </div>
-  <div class="field">
-    <%= f.label :bid %><br>
-    <%= f.number_field :bid %>
-  </div>
-  <div class="field">
-    <%= f.label :ask %><br>
-    <%= f.number_field :ask %>
-  </div>
-  <div class="field">
-    <%= f.label :exchange_order_number %><br>
-    <%= f.number_field :exchange_order_number %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  market_orders_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
