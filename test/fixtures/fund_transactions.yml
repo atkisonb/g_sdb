@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fund_id: 
+  market_shares: 1
+  amount: 1
+  stock_id: 
+  market_order_id: 
+
+two:
+  fund_id: 
+  market_shares: 1
+  amount: 1
+  stock_id: 
+  market_order_id: 
