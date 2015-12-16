@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  bank_account_number: 1
+  bank_routing_number: 1
+  verified_at: 2015-12-16
+
+two:
+  user_id: 
+  bank_account_number: 1
+  bank_routing_number: 1
+  verified_at: 2015-12-16
